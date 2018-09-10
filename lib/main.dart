@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'pavlova_page.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -79,22 +79,25 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
       ),
     );
 
+    var body = Scaffold(
+      appBar: AppBar(
+        title: Text('Top Lakes'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          Image.asset('images/lake.jpg',height: 240.0,fit: BoxFit.cover),
+          title,
+          buttonSection,
+          textSection
+        ],
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter UI Tutorial',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Top Lakes'),
-        ),
-        body: ListView(
-          children: <Widget>[
-             Image.asset('images/lake.jpg',height: 240.0,fit: BoxFit.cover),
-             title,
-             buttonSection,
-             textSection
-          ],
-        ),
-      ),
+      home: PavlovaPage()
     );
+
   }
 }
