@@ -39,17 +39,15 @@ class PavlovaPage extends StatelessWidget {
     );
 
     var textStyle = TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
-      letterSpacing: 0.5,
-      fontSize: 18.0,
-      height: 1.5
-    );
+        color: Colors.black,
+        fontWeight: FontWeight.w800,
+        fontFamily: 'Roboto',
+        letterSpacing: 0.5,
+        fontSize: 18.0,
+        height: 1.5);
 
-
-
-    var iconsRow = DefaultTextStyle.merge(style: textStyle,
+    var iconsRow = DefaultTextStyle.merge(
+        style: textStyle,
         child: Container(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -80,16 +78,22 @@ class PavlovaPage extends StatelessWidget {
           ),
         ));
 
+    var bottomArea = Container(
+      padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 0.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[ratingSection, iconsRow],
+      ),
+    );
 
     return Scaffold(
       appBar: AppBar(title: Text('Strabery Pavlova')),
       body: ListView(
         children: <Widget>[
-          Image.asset('images/pavlova.jpg',height: 240.0,fit: BoxFit.cover),
+          Image.asset('images/pavlova.jpg', height: 240.0, fit: BoxFit.cover),
           titleSection,
           textSection,
-          ratingSection,
-          iconsRow
+          bottomArea
         ],
       ),
     );
