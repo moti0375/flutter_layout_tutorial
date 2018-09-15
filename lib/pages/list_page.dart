@@ -25,6 +25,9 @@ class ListPage extends StatelessWidget {
         BoxDecoration(border: Border.all(color: Colors.black45, width: 0.5)),
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
+          onTap: (){
+            print('Item Tapped');
+          },
           title: Text(
             'The Castro Theater',
             style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w400),
